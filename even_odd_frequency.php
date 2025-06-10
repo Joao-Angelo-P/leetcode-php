@@ -22,22 +22,16 @@ class Solution {
         }
 
         foreach ($arr as $k => $v){
-            if (!$par and !($v % 2)){
-                $par = $v;
-            }
-            if (!$impar and $v % 2){
-                $impar = $v;
-            }
-
-            if ($v % 2 and $v > $impar){
-                $impar = $v;
-            }
-
-            if ($v % 2 === 0 and $v < $par){
-                $par = $v;
+            if (!($v % 2)){
+                if (!$par || $v < $par){
+                    $par = $v;
+                }
+            }else {
+                if (!$impar || $v > $impar){
+                    $impar = $v;
+                }
             }
         }
-
         return $impar - $par;
     }
 }

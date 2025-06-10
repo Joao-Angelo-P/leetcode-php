@@ -7,7 +7,7 @@ class Solution {
      * @return Integer
      */
 // 3442. Maximum Difference Between Even and Odd Frequency
-I
+    
     function maxDifference($s) {
         $arr = [];
         [$par, $impar] = [0, 0];
